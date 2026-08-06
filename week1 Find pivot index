@@ -1,0 +1,30 @@
+lass Solution {
+    public int pivotIndex(int[] nums) {
+        int total = 0;
+
+        // Find total sum
+        for (int num : nums) {
+            total += num;
+        }
+
+        int leftSum = 0;
+
+        // Find pivot index
+        for (int i = 0; i < nums.length; i++) {
+            if (leftSum == total - leftSum - nums[i]) {
+                return i;
+            }
+            leftSum += nums[i];
+        }
+
+        return -1;
+    }
+}
+
+
+nums =
+[1,7,3,6,5,6]
+Output
+3
+Expected
+3
